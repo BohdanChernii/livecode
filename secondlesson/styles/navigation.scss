@@ -1,0 +1,46 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    &__titles {
+        margin: 0 auto;
+        flex-grow: 1;
+        font-size: 36px;
+        letter-spacing: 3.6px;
+    }
+    &__search {
+        margin: 25px auto;
+        display: flex;
+    }
+    &__filter,
+    &__sort {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+    }
+    &__label {
+        font-size: 0.75em;
+        font-weight: 700;
+        color: #666;
+        text-transform: uppercase;
+    }
+    &__select {
+        color: #333;
+        width: 100px;
+        border: 0;
+        background-color: #f7f7f7;
+        line-height: 1.375;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-left: -5px;
+    }
+}
+
+@media (min-width: 600px) {
+    .navigation {
+        flex-direction: row;
+        &__search {
+            margin: 0;
+        }
+    }
+}
