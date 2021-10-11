@@ -11,7 +11,7 @@ import Spinner from './Spinner.jsx';
 // 3. AFTER 2 seconds - hide Spinner & show logout
 // 4. AFTER logout click - hide logout & show login
 
-class App extends Component {
+class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +30,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Auth;
 
 //0. make a layout
 //1. split to components
