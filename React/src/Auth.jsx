@@ -12,21 +12,29 @@ import Spinner from './Spinner.jsx';
 // 4. AFTER logout click - hide logout & show login
 
 class Auth extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLogin: false,
-    };
-  }
+  state = {
+    isLogin: false,
+    isProcesing: false,
+  };
+
+  loginHeader = () => {
+    this.setState({ isProcesing: true });
+    setTimeout(() => {
+      this.setState({ isProcesing: false, isLogin: true });
+    }, 2000);
+  };
+
+  logOutHeader = () => {
+    this.setState({ isLogin: false });
+  };
 
   render() {
-    return (
-      <div>
-        <Spinner />
-        <LogIn />
-        <LogOut />
-      </div>
-    );
+    console.log('RENDER STARTED');
+    const { isLogin, isProcesing } = this.state;
+    if (isProcesing) {
+      return <Spinner />;
+    }
+    return isLogin ? <LogOut onLogout={this.logOutHeader} /> : <LogIn onLogin={this.loginHeader} />;
   }
 }
 

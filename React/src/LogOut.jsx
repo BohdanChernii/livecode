@@ -1,8 +1,10 @@
 import React from 'react';
 
-function LogOut (){
-    return(
-<button className="logout btn">Logout</button>
-    )
+function LogOut({onLogout}) {
+  return (
+    <button className="logout btn" onClick={onLogout}>
+      Log Out
+    </button>
+  );
 }
 export default LogOut;
